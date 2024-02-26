@@ -1,6 +1,8 @@
 .footer {
   max-width: 880px;
   margin: 0 auto;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
 }
 
 .footer__copyright {
@@ -8,6 +10,10 @@
   margin: 0;
   padding: 0;
   width: 282px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 @media screen and (max-width: 320px) {

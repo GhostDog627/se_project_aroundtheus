@@ -1,15 +1,19 @@
 .card__list {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 282px);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px 17px;
   margin: 0;
+  padding: 51px 0 67px 0;
 }
 
 .card__content {
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
+  font-family: "Inter", Arial, sans-serif;
+  line-height: normal;
+  font-weight: 900;
 }
 
 .card {
@@ -28,6 +32,10 @@
   text-overflow: ellipsis;
   overflow: hidden;
   color: black;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
 }
 
 .card__image {
@@ -57,4 +65,10 @@
 .card__like-button:hover {
   opacity: 0.5;
   cursor: pointer;
+}
+
+@media screen and (max-width: 680px) {
+  .card__list {
+    padding: 36px 0 48px 0;
+  }
 }
