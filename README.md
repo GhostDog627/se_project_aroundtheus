@@ -9,3 +9,6 @@ git@github.com:GhostDog627/https-github.com-tripleten-com-se_project_aroundtheus
 
 Figma link
 https://www.figma.com/file/Es8zZP3ARGH9JGcw60i3OD/Sprint-3_-Around-the-US?type=design&node-id=7505-2&mode=design&t=fdNVz7oLQ4HyUohi-0
+
+Video link
+https://drive.google.com/file/d/1d220vv5vjEVW0oV3RM3n_fA-AhNvtswI/view?usp=drive_link
