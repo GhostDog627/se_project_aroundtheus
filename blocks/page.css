@@ -18,12 +18,15 @@
   max-width: 880px;
   margin: 0 auto;
   font-family: "Inter", Arial, sans-serif;
+  padding: 0 20px;
 }
 
 @media screen and (max-width: 1280px) {
   .page__content{
     max-width: 1280px;
     max-width: calc(100%-40px);
+    padding: 0;
+    margin-left: 27px;
   }
 }
 
