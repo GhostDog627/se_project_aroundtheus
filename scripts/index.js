@@ -1,6 +1,6 @@
 const initialCards = [
 {  name: "back of head portrait",
-   link: https:"//unsplash.com/photos/a-man-with-tattoos-covering-his-face-and-hands-behind-his-head-10TQYfgWnQI",
+   link: "https://unsplash.com/photos/a-man-with-tattoos-covering-his-face-and-hands-behind-his-head-10TQYfgWnQI",
 },
 
 {
