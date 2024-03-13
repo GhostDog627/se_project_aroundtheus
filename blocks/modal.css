@@ -1,0 +1,121 @@
+.modal  {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  padding: 0 19px;
+  z-index: 999;
+}
+
+.modal__container {
+  position: absolute;
+  padding: 36px;
+  background-color: white;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.modal__opened {
+  display: flex;
+}
+
+.modal__close {
+  position: absolute;
+  background-image: url(../images/Close\ Icon.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.modal__heading {
+  margin: 0;
+  color: black;
+  width: 330px;
+  height: 23px;
+  font-family: "Inter";
+  font-size: 24px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input-title {
+  font-family: "Inter";
+  font-size: 14px;
+  border: none;
+  margin-top: 54px;
+  width: 358px;
+  height: 27px;
+}
+
+.modal__input-description {
+  font-family: "Inter";
+  font-size: 14px;
+  border: none;
+  margin-top: 54px;
+  width: 358px;
+  height: 27px;
+}
+
+.modal__button {
+  font-family: "Inter";
+  font-size: 18px;
+  margin-top: 48px;
+  color: white;
+  width: 358px;
+  height: 50px;
+  background-color: black;
+}
+
+@media screen and (max-width: 680px) {
+  .modal__container {
+    padding: 0 22px 0;
+    width: 100%;
+    height: 322px;
+    box-sizing: border-box;
+  }
+
+  .modal__close {
+    padding: 0;
+    margin-bottom: 13px;
+    left: 264px;
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+  }
+
+  .modal__heading {
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    color: black;
+    width: 238px;
+  }
+
+  .modal__input-title {
+    width: 238px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .modal__input-description {
+    width: 238px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .modal__button {
+    width: 100%;
+    height: 46px;
+    flex-shrink: 0;
+  }
+}
