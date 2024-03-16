@@ -28,3 +28,15 @@ const initialCards = [
   link:"https://unsplash.com/photos/black-motorcycle-on-brown-dirt-road-during-daytime--P-YV9aTyHE",
 },
 ];
+
+const profileEditButton = document.querySelector('#profile-edit-button');
+const profileEditModal = document.querySelector('#profile-edit-modal');
+const profileCloseModal = document.querySelector('#modal-close-button');
+
+profileEditButton.addEventListener('click', () => {
+  profileEditModal.classList.add('modal_opened')
+});
+
+profileCloseModal.addEventListener('click', () => {
+  profileCloseModal.classList.remove('modal_opened')
+});
