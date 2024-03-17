@@ -18,7 +18,7 @@
   border-radius: 10px;
 }
 
-.modal__opened {
+.modal_opened {
   display: flex;
 }
 
@@ -29,8 +29,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
-  bottom: calc(100% + 5px);
   left: calc(100% + 5px);
+  bottom: calc(100% + 5px);
   width: 40px;
   height: 40px;
   border: none;
