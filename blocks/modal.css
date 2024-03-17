@@ -8,6 +8,7 @@
   bottom: 0;
   right: 0;
   left: 0;
+  position: fixed;
 }
 
 .modal__container {
@@ -16,6 +17,8 @@
   background-color: white;
   margin: auto;
   border-radius: 10px;
+  width: 100%;
+  max-width: 358px;
 }
 
 .modal_opened {
@@ -34,10 +37,12 @@
   width: 40px;
   height: 40px;
   border: none;
+  padding: 0;
 }
 
 .modal__title {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 24px;
   color: black;
   width: 330px;
   height: 23px;
