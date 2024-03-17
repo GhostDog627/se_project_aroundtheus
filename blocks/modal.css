@@ -4,10 +4,14 @@
   display: none;
   padding: 0 19px;
   z-index: 999;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 .modal__container {
-  position: absolute;
+  position: relative;
   padding: 36px;
   background-color: white;
   margin: auto;
@@ -32,7 +36,7 @@
   border: none;
 }
 
-.modal__heading {
+.modal__title {
   margin: 0;
   color: black;
   width: 330px;
@@ -91,7 +95,7 @@
     height: 26px;
   }
 
-  .modal__heading {
+  .modal__title {
     font-family: Inter;
     font-size: 18px;
     font-style: normal;
