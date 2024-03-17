@@ -85,7 +85,8 @@
 
 @media screen and (max-width: 680px) {
   .modal__container {
-    padding: 0 22px 0;
+    padding-right: 22px;
+    padding-left: 22px;
     width: 100%;
     height: 322px;
     box-sizing: border-box;
@@ -108,23 +109,27 @@
     line-height: normal;
     color: black;
     width: 238px;
+    top: 25px;
   }
 
   .modal__input-title {
     width: 238px;
     height: 14px;
     flex-shrink: 0;
+    top: 75px;
   }
 
   .modal__input-description {
     width: 238px;
     height: 14px;
     flex-shrink: 0;
+    top: 30px;
   }
 
   .modal__button {
-    width: 100%;
+    width: 238px;
     height: 46px;
     flex-shrink: 0;
+    bottom: 25px;
   }
 }
