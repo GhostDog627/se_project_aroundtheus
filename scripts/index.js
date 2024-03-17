@@ -1,32 +1,28 @@
 const initialCards = [
-{  name: "back of head portrait",
-   link: "https://unsplash.com/photos/a-man-with-tattoos-covering-his-face-and-hands-behind-his-head-10TQYfgWnQI",
-},
-
-{
-  name:"old cars",
-  link:"https://unsplash.com/photos/a-car-is-parked-in-front-of-a-house-yEYravYsZkU",
-},
-
-{
-  name:"nightime japan",
-  link:"https://unsplash.com/photos/a-woman-walking-down-a-street-holding-an-umbrella-5KRVZp_23a0",
-},
-
-{
-  name:"field",
-  link:"https://unsplash.com/photos/a-grassy-field-with-a-fence-in-the-background-NdK5-yABH2c",
-},
-
-{
-  name:"hiking",
-  link:"https://unsplash.com/photos/a-person-walking-up-a-hill-on-a-sunny-day-JM0VeViZPo4",
-},
-
-{
-  name:"motorcycle in mountains",
-  link:"https://unsplash.com/photos/black-motorcycle-on-brown-dirt-road-during-daytime--P-YV9aTyHE",
-},
+  {
+    name: "Yosemite Valley",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+  },
+  {
+    name: "Lake Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
+  },
+  {
+    name: "Bald Mountains",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
+  },
+  {
+    name: "Vanoise National Park",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
+  },
 ];
 
 const profileEditButton = document.querySelector("#profile-edit-button");
