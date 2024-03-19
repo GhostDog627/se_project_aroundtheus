@@ -53,6 +53,7 @@
 .modal__form {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 
 .modal__input-title {
@@ -85,39 +86,39 @@
 
 @media screen and (max-width: 320px) {
   .modal__container {
-  max-width: 282px;
-  width: 100%;
-  padding: 25px 22px;
+    max-width: 100%;
+    padding: 25px 22px;
 }
 
 .modal__title {
-  font-size: 18px;
-  line-height: 22px;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .modal__close {
-  width: 26px;
-  height: 26px;
-  right: 0;
+   max-width: 26px;
+   height: 26px;
+   right: 0;
 }
 
 .modal__button {
-  height: 46px;
-  line-height: 17px;
-  font-size: 14px;
+   height: 46px;
+   line-height: 17px;
+   font-size: 14px;
+   max-width: 100%;
 }
 
 .modal__input-title {
-  line-height: 17px;
-  font-size: 14px;
+   line-height: 17px;
+   font-size: 14px;
 }
 
 .modal__input-description {
-  line-height: 17px;
-  font-size: 14px;
+   line-height: 17px;
+   font-size: 14px;
 }
 
 .modal__form {
-  max-width: 100%;
+   max-width: 100%;
 }
 }
