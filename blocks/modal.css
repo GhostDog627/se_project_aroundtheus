@@ -84,7 +84,7 @@
 
 @media screen and (max-width: 320px) {
   .modal__container {
-    max-width: 282px;
+    max-width: calc(100% - 19px * 2);
     padding: 25px 22px;
 }
 
@@ -94,9 +94,10 @@
 }
 
 .modal__close {
-   width: 100%;
+   width: 26px;
    height: 26px;
-   right: 0;
+   left: calc(100% - 35px);
+   bottom: calc(100% + 14px);
 }
 
 .modal__button {
