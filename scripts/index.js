@@ -42,6 +42,10 @@ const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
 const addCardForm = addCardModal.querySelector(".modal__form");
 const cardTitleInput = addCardForm.querySelector(".modal__input-title");
 const cardUrlInput = addCardForm.querySelector(".modal__input-url");
+const modalImagePreview = document.querySelector("#modal__image-preview");
+const previewImagePreview = modalImagePreview.querySelector(".preview__image-preview");
+const modalImageName = modalImagePreview.querySelector("#modal__image-name");
+const imagePreviewCloseButton = modalImagePreview.querySelector(".image-preview-close-button");
 
 
 
@@ -67,7 +71,6 @@ function getCardElement(cardData) {
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
-
 
 
   cardTitleEl.textContent = cardData.name;
@@ -96,6 +99,16 @@ function handleAddCardFormSubmit(e) {
   closePopup(addCardModal);
 }
 
+function handleCardImageClick(e) {
+  if (e.target.classList.contains("card__image")) {
+    const cardImageEl = e.target;
+    const cardTitleEl = cardImageEl.closest(".card").querySelector(".card__title");
+    previewImagePreview.src = cardImageEl.src;
+    modalImageName.textContent = cardTitleEl.textContent;
+    openPopup(modalImagePreview);
+  }
+}
+
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
@@ -112,5 +125,9 @@ addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 
 addCardModalCloseButton.addEventListener("click", () => closePopup(addCardModal));
+
+cardListEl.addEventListener("click", handleCardImageClick);
+
+imagePreviewCloseButton.addEventListener("click", () => closePopup(modalImagePreview));
 
 initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));
