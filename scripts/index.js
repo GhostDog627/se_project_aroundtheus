@@ -42,10 +42,10 @@ const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
 const addCardForm = addCardModal.querySelector(".modal__form");
 const cardTitleInput = addCardForm.querySelector(".modal__input-title");
 const cardUrlInput = addCardForm.querySelector(".modal__input-url");
-const modalImagePreview = document.querySelector("#modal__image-preview");
-const previewImagePreview = modalImagePreview.querySelector(".preview__image-preview");
-const modalImageName = modalImagePreview.querySelector(".modal__image-name");
-const imagePreviewCloseButton = modalImagePreview.querySelector("#image-preview-close-button");
+const previewImageModal = document.querySelector("#preview-image-modal");
+const preveiwImageCloseButton = previewImageModal.querySelector(".modal__close");
+const previewImageTitle = previewImageModal.querySelector(".modal__preview-title");
+const previewImageCard = previewImageModal.querySelector(".modal__preview-image");
 
 
 
@@ -74,7 +74,10 @@ function getCardElement(cardData) {
   });
 
   cardImageEl.addEventListener("click", () => {
-    handleCardImageClick(cardData.link, cardData.name);
+    openPopup(previewImageModal);
+    previewImageTitle.textContent = cardData.name;
+    previewImageCard.alt = cardData.name;
+    previewImageCard.src = cardData.link;
   });
 
   cardTitleEl.textContent = cardData.name;
@@ -103,19 +106,6 @@ function handleAddCardFormSubmit(e) {
   closePopup(addCardModal);
 }
 
-function handleCardImageClick() {
-  const cardImageEl = this;
-  const cardTitleEl = cardImageEl.closest(".card").querySelector(".card__title");
-
-  if (cardTitleEl) {
-    previewImagePreview.src = cardImageEl.src;
-    modalImageName.textContent = cardTitleEl.textContent;
-    openPopup(modalImagePreview);
-  } else {
-    console.error("Card title element not found");
-  }
-}
-
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
@@ -133,8 +123,6 @@ addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 
 addCardModalCloseButton.addEventListener("click", () => closePopup(addCardModal));
 
-cardListEl.addEventListener("click", handleCardImageClick);
-
-imagePreviewCloseButton.addEventListener("click", () => closePopup(modalImagePreview));
+preveiwImageCloseButton.addEventListener("click", () => {closePopup(previewImageModal);});
 
 initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));
