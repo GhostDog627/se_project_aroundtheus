@@ -79,7 +79,7 @@ function getCardElement(cardData) {
 
   cardTitleEl.textContent = cardData.name;
   cardImageEl.setAttribute("src", cardData.link);
-  cardImageEl.setAttribute("alt", cardData.title)
+  cardImageEl.setAttribute("alt", "Photo of ${cardData.name}");
   return cardElement;
 }
 
@@ -103,13 +103,16 @@ function handleAddCardFormSubmit(e) {
   closePopup(addCardModal);
 }
 
-function handleCardImageClick(e) {
-  if (e.target.classList.contains("card__image")) {
-    const cardImageEl = e.target;
-    const cardTitleEl = cardImageEl.closest(".card").querySelector(".card__title");
+function handleCardImageClick() {
+  const cardImageEl = this;
+  const cardTitleEl = cardImageEl.closest(".card").querySelector(".card__title");
+
+  if (cardTitleEl) {
     previewImagePreview.src = cardImageEl.src;
     modalImageName.textContent = cardTitleEl.textContent;
     openPopup(modalImagePreview);
+  } else {
+    console.error("Card title element not found");
   }
 }
 
