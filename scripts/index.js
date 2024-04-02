@@ -44,8 +44,8 @@ const cardTitleInput = addCardForm.querySelector(".modal__input-title");
 const cardUrlInput = addCardForm.querySelector(".modal__input-url");
 const modalImagePreview = document.querySelector("#modal__image-preview");
 const previewImagePreview = modalImagePreview.querySelector(".preview__image-preview");
-const modalImageName = modalImagePreview.querySelector("#modal__image-name");
-const imagePreviewCloseButton = modalImagePreview.querySelector(".image-preview-close-button");
+const modalImageName = modalImagePreview.querySelector(".modal__image-name");
+const imagePreviewCloseButton = modalImagePreview.querySelector("#image-preview-close-button");
 
 
 
