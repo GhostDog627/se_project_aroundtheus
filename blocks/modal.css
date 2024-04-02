@@ -1,7 +1,7 @@
 .modal  {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
-  display: none;
+  display: flex;
   padding: 0 19px;
   z-index: 999;
   top: 0;
@@ -25,7 +25,6 @@
 }
 
 .modal_opened {
-  display: flex;
   visibility: visible;
   opacity: 1;
   pointer-events: all;
