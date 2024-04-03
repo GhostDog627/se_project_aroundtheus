@@ -82,7 +82,7 @@ function getCardElement(cardData) {
 
   cardTitleEl.textContent = cardData.name;
   cardImageEl.setAttribute("src", cardData.link);
-  cardImageEl.setAttribute("alt", "Photo of ${cardData.name}");
+  cardImageEl.setAttribute("alt", `Photo of ${cardData.name}`);
   return cardElement;
 }
 
