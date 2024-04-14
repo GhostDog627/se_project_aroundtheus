@@ -43,18 +43,26 @@
           <form class="modal__form" id="edit-profile-form">
             <input
               type="text"
+              required
+              maxlength="40"
+              minlength="2"
               class="modal__input modal__input-name"
               name="title"
               id="profile-title-input"
               placeholder="name"
               />
+              <span class="popup__error" id="owner-name-error"></span>
             <input
               type="text"
+              required
+              maxlength="200"
+              minlength="2"
               class="modal__input modal__input-description"
               name="description"
               id="profile-description-input"
               placeholder="description"
               />
+              <span class="popup__error" id="owner-description-error"></span>
             <button class="button modal__button" type="submit">Save</button>
           </form>
         </div>
@@ -72,6 +80,7 @@
               id="profile-title-input"
               placeholder="Title"
               />
+              <span class="popup__error" id="card-name-error"></span>
             <input
               type="url"
               class="modal__input modal__input-url"
@@ -79,7 +88,8 @@
               id="profile-description-input"
               placeholder="Image URL"
               />
-            <button class="button modal__button" type="submit">Save</button>
+              <span class="popup__error" id="url-site-error"></span>
+            <button class="button modal__button popup__button_disabled" type="submit" disabled>Save</button>
           </form>
         </div>
       </div>
@@ -104,5 +114,6 @@
       </template>
 
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validation.js" defer></script>
   </body>
 </html>
