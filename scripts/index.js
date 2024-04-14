@@ -106,6 +106,12 @@ function handleAddCardFormSubmit(e) {
   closePopup(addCardModal);
 }
 
+function closeWithEscape(e) {
+  if (e.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened");
+    closeModal(modal);
+  }
+}
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;

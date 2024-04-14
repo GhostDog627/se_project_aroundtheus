@@ -1,3 +1,13 @@
+function disabledButton(submitButton, inactiveButtonClass) {
+  submitButton.classlist.add(inactiveButtonClass);
+  submitButton.disabled = true;
+}
+
+function enableButton(submitButton, inactiveButtonClass){
+  submitButton.classlist.remove(inactiveButtonClass);
+  submitButton.disabled = false;
+}
+
 function showInputError(formEl, inputEl, {inputErrorClass, errorClass}) {
   const errorMessagesEl = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classlist.add(inputErrorClass);
@@ -21,27 +31,19 @@ function checkInputValidity(formEl, inputEl, options) {
 }
 
 function toggleButtonState(inputEls, submitButton, {inactiveButtonClass}) {
-  let foundInvalid = false;
-  inputEls.forEach(input => {
-    if(!inputEl.validity.valid) {
-      foundInvalid = true;
-    }
-  })
-
-  if(foundInvalid) {
-    submitButton.classlist.add(inactiveButtonClass);
-    submitButton.disabled = true;
-  } else {
-    submitButton.classlist.remove(inactiveButtonClass);
-    submitButton.disabled = false;
+  if (hasInvalidInput(inputEls)) {
+    disabledButton(submitButton, inactiveButtonClass);
+    return;
   }
+
+  enabledButton(submitButton, inactiveButtonClass);
 }
 
 function setEventListeners(formEl, options) {
   const {inputSelector} = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = formEl.querySelector(".popup__button");
-  inputEls.forEach(inputEl => {
+  const submitButton = formEl.querySelector(".modal__button");
+  inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
       toggleButtonState(inputEls, submitButton, options);
@@ -64,9 +66,9 @@ const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible"
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible"
 };
 
 enableValidation(config);
