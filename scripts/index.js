@@ -46,7 +46,7 @@ const previewImageModal = document.querySelector("#preview-image-modal");
 const preveiwImageCloseButton = previewImageModal.querySelector(".modal__close");
 const previewImageTitle = previewImageModal.querySelector(".modal__preview-title");
 const previewImageCard = previewImageModal.querySelector(".modal__preview-image");
-
+const eachModal = document.querySelectorAll(".modal");
 
 
 function closePopup(modal){
