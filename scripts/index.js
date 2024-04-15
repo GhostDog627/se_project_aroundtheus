@@ -51,11 +51,12 @@ const previewImageCard = previewImageModal.querySelector(".modal__preview-image"
 
 function closePopup(modal){
   modal.classList.remove("modal_opened");
-  document.removeEventListener(closeWithEscape);
+  document.removeEventListener("keydown", closeWithEscape);
 }
 
 function openPopup(modal){
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeWithEscape);
 }
 
 
@@ -109,7 +110,7 @@ function handleAddCardFormSubmit(e) {
 
 function closeWithEscape(e) {
   if (e.key === "Escape") {
-    const openModal = document.querySelector(".modal_opened");
+    const openPopup = document.querySelector(".modal_opened");
     closeModal(modal);
   }
 }
@@ -131,9 +132,5 @@ addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 addCardModalCloseButton.addEventListener("click", () => closePopup(addCardModal));
 
 preveiwImageCloseButton.addEventListener("click", () => {closePopup(previewImageModal);});
-
-closeWithEscape.addEventListener("click", () => {closePopup(profileEditModal)});
-
-closeWithEscape.addEventListener("click", () => {closePopup(addCardModal)});
 
 initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));
