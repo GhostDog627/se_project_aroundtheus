@@ -51,6 +51,7 @@ const previewImageCard = previewImageModal.querySelector(".modal__preview-image"
 
 function closePopup(modal){
   modal.classList.remove("modal_opened");
+  document.removeEventListener(closeWithEscape);
 }
 
 function openPopup(modal){
@@ -103,7 +104,7 @@ function handleAddCardFormSubmit(e) {
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({name, link}, cardsWrap);
-  closePopup(addCardModal);
+  closePopup(addCardModal).reset();
 }
 
 function closeWithEscape(e) {
@@ -130,5 +131,9 @@ addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 addCardModalCloseButton.addEventListener("click", () => closePopup(addCardModal));
 
 preveiwImageCloseButton.addEventListener("click", () => {closePopup(previewImageModal);});
+
+closeWithEscape.addEventListener("click", () => {closePopup(profileEditModal)});
+
+closeWithEscape.addEventListener("click", () => {closePopup(addCardModal)});
 
 initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));
