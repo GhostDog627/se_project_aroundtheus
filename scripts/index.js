@@ -115,6 +115,14 @@ function closeWithEscape(e) {
   }
 }
 
+eachModal.forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    if (e.target.classList.contains(".modal_opened")) {
+      closeModal(modal);
+    }
+  });
+});
+
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
