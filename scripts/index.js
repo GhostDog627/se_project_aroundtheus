@@ -51,11 +51,13 @@ const previewImageCard = previewImageModal.querySelector(".modal__preview-image"
 function closePopup(modal){
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", closeWithEscape);
+  modal.removeEventListener("mousedown", closePopupOverlay);
 }
 
 function openPopup(modal){
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeWithEscape);
+  modal.addEventListener("mousedown", closePopupOverlay);
 }
 
 
@@ -116,22 +118,11 @@ function closeWithEscape(e) {
   }
 }
 
-const openPopups = document.querySelectorAll('.modal_opened');
-
-openPopups.forEach((openPopup) => {
-    openPopup.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-
-    document.addEventListener('click', function(e) {
-        const clickedElement = e.target;
-
-        if (!openPopup.contains(clickedElement)) {
-            closePopup(openPopup);
-        }
-    });
-});
-
+function closePopupOverlay(e) {
+  if (e.target === e.currentTarget) {
+    closePopup(e.currentTarget);
+  }
+}
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
