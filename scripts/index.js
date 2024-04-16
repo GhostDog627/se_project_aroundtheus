@@ -116,15 +116,6 @@ function closeWithEscape(e) {
   }
 }
 
-document.addEventListener("click", (e) => {
-  const clickedElement = e.target;
-  const openModal = document.querySelector(".modal_opened");
-  if (openModal && !openModal.contains(clickedElement)) {
-    closeModal(openModal);
-  }
-});
-
-
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
