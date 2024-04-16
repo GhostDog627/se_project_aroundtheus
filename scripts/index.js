@@ -116,6 +116,23 @@ function closeWithEscape(e) {
   }
 }
 
+const openPopups = document.querySelectorAll('.modal_opened'); // Select all open popups
+
+openPopups.forEach((openPopup) => {
+    openPopup.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent click events from bubbling up
+    });
+
+    document.addEventListener('click', function(event) {
+        const clickedElement = event.target;
+
+        if (!openPopup.contains(clickedElement)) {
+            closePopup(openPopup); // Close the popup if the click is outside
+        }
+    });
+});
+
+
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
