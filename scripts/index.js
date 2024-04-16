@@ -116,18 +116,18 @@ function closeWithEscape(e) {
   }
 }
 
-const openPopups = document.querySelectorAll('.modal_opened'); // Select all open popups
+const openPopups = document.querySelectorAll('.modal_opened');
 
 openPopups.forEach((openPopup) => {
-    openPopup.addEventListener('click', function(event) {
-        event.stopPropagation(); // Prevent click events from bubbling up
+    openPopup.addEventListener('click', function(e) {
+        e.stopPropagation();
     });
 
-    document.addEventListener('click', function(event) {
-        const clickedElement = event.target;
+    document.addEventListener('click', function(e) {
+        const clickedElement = e.target;
 
         if (!openPopup.contains(clickedElement)) {
-            closePopup(openPopup); // Close the popup if the click is outside
+            closePopup(openPopup);
         }
     });
 });
