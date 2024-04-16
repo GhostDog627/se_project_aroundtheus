@@ -36,13 +36,13 @@ function toggleButtonState(inputEls, submitButton, {inactiveButtonClass}) {
     return;
   }
 
-  enabledButton(submitButton, inactiveButtonClass);
+  enableButton(submitButton, inactiveButtonClass);
 }
 
 function setEventListeners(formEl, options) {
   const {inputSelector} = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = options.querySelector(".modal__button");
+  const submitButton = formEl.querySelector(".modal__button");
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
@@ -52,14 +52,13 @@ function setEventListeners(formEl, options) {
 }
 
 function enableValidation(options) {
-  const formEl = [...document.querySelectorAll(options.formSelector)];
-  formEl.forEach((formEl) => {
-    formEl.addEventListener("submit", (e) => {
+  const formEl = document.querySelectorAll(options.formSelector);
+  formEl.forEach((form) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
     });
+    setEventListeners(form, options);
   });
-
-  setEventListeners(formEl, options);
 }
 
 const config = {

@@ -46,7 +46,6 @@ const previewImageModal = document.querySelector("#preview-image-modal");
 const preveiwImageCloseButton = previewImageModal.querySelector(".modal__close");
 const previewImageTitle = previewImageModal.querySelector(".modal__preview-title");
 const previewImageCard = previewImageModal.querySelector(".modal__preview-image");
-const eachModal = document.querySelectorAll(".modal");
 
 
 function closePopup(modal){
@@ -111,17 +110,20 @@ function handleAddCardFormSubmit(e) {
 function closeWithEscape(e) {
   if (e.key === "Escape") {
     const openPopup = document.querySelector(".modal_opened");
-    closeModal(modal);
+    if (openPopup) {
+    closePopup(openPopup);
+    }
   }
 }
 
-eachModal.forEach((modal) => {
-  modal.addEventListener("click", (e) => {
-    if (e.target.classList.contains(".modal_opened")) {
-      closeModal(modal);
-    }
-  });
+document.addEventListener("click", (e) => {
+  const clickedElement = e.target;
+  const openModal = document.querySelector(".modal_opened");
+  if (openModal && !openModal.contains(clickedElement)) {
+    closeModal(openModal);
+  }
 });
+
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
