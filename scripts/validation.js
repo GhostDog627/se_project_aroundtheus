@@ -9,17 +9,17 @@ function enableButton(submitButton, inactiveButtonClass){
 }
 
 function showInputError(formEl, inputEl, {inputErrorClass, errorClass}) {
-  const errorMessagesEl = formEl.querySelector(`#${inputEl.id}-error`);
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classlist.add(inputErrorClass);
-  errorMessagesEl.textContent = inputEl.validationMessage;
-  errorMessagesEl.classlist.add(errorClass);
+  errorMessageEl.textContent = inputEl.validationMessage;
+  errorMessageEl.classlist.add(errorClass);
 }
 
 function hideInputError(formEl, inputEl, {inputErrorClass, errorClass}) {
-  const errorMessagesEl = formEl.querySelector(`#${inputEl.id}-error`);
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classlist.remove(inputErrorClass);
-  errorMessagesEl.textContent = "";
-  errorMessagesEl.classlist.remove(errorClass);
+  errorMessageEl.classlist.remove(errorClass);
+  errorMessageEl.textContent = "";
 }
 
 function checkInputValidity(formEl, inputEl, options) {

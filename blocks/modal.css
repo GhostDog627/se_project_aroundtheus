@@ -1,4 +1,4 @@
-.modal  {
+.modal {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -13,6 +13,7 @@
   opacity: 0;
   transition: visibility 0s 0.5s, opacity 0.5s linear;
   pointer-events: none;
+  border: none;
 }
 
 .modal__container {
@@ -66,7 +67,7 @@
   flex-direction: column;
 }
 
-.modal__input:last-of-type {
+.modal__input {
   font-family: "Inter", Arial, sans-serif;
   font-size: 14px;
   border: none;
