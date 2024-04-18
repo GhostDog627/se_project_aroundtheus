@@ -131,9 +131,10 @@
   user-select: none;
 }
 
-.mdoal__input_type_error {
+.modal__input_type_error {
   border-bottom: 1px solid #ff0000;
 }
+
 
 .modal__error_visible {
   opacity: 1;
