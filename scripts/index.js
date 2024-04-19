@@ -106,7 +106,8 @@ function handleAddCardFormSubmit(e) {
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({name, link}, cardsWrap);
-  closePopup(addCardModal).reset();
+  closePopup(addCardModal);
+  addCardForm.reset();
 }
 
 function closeWithEscape(e) {
