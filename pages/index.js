@@ -107,6 +107,10 @@ function renderCard(cardData) {
   cardsWrap.prepend(generateCard);
 }
 
+  const editFormValidator = new FormValidator();
+  editFormValidator.enableValidation();
+
+
 function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;

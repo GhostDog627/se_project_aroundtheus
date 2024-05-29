@@ -57,5 +57,4 @@ class FormValidator {
 // this gets done in index.js
 // need to pass args
 
-
 export default FormValidator

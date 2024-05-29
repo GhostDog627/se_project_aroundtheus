@@ -3,7 +3,7 @@
     this._cardName = cardData.name;
     this._link = cardData.link;
     this._cardSelector = cardSelector;
-  this._handleImageClick = handleImageClick;
+    this._handleImageClick = handleImageClick;
   }
 
 
