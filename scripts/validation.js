@@ -53,7 +53,7 @@ function setEventListeners(formEl, options) {
       toggleButtonState(inputEls, submitButton, options);
     });
   });
-}
+};
 
 function enableValidation(options) {
   const formEl = document.querySelectorAll(options.formSelector);
