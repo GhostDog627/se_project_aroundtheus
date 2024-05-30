@@ -86,6 +86,9 @@ const formElement = document.querySelector(config.formSelector);
 const formValidator = new FormValidator(config, formElement);
 formValidator.enableValidation();
 
+const addCardFormValidator = new FormValidator(config, addCardForm);
+addCardFormValidator.enableValidation();
+
 function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
@@ -97,7 +100,7 @@ function handleAddCardFormSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-  renderCard({ name, link }, cardsWrap);
+  renderCard({ name, link });
   closePopup(addCardModal);
   addCardForm.reset();
 }
