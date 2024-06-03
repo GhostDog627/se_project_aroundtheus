@@ -58,9 +58,7 @@ class FormValidator {
     event.preventDefault();
     if (this._hasInvalidInput()) {
       this._toggleButtonState();
-    } else {
-      console.log("Form submitted successfully!");
-    }
+    } 
   }
 
   enableValidation() {
@@ -75,6 +73,12 @@ class FormValidator {
     });
     this._toggleButtonState();
   }
+
+  disableSubmitButton() {
+    this._submitButton.classList.add(this._inactiveButtonClass);
+    this._submitButton.disabled = true;
+  }
 }
 
 export default FormValidator;
+
