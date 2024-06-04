@@ -84,8 +84,8 @@ function createCard(item) {
 }
 
 function renderCard(cardData) {
-  const cardElement = new Card(cardData, "#card-template", handleImageClick);
-  const generateCard = cardElement.getView();
+  const card = new Card(cardData, "#card-template", handleImageClick);
+  const cardElement = card.getView();
   cardsWrap.prepend(cardElement);
 }
 
