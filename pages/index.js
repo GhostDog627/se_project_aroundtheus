@@ -71,15 +71,22 @@ function openPopup(modal) {
 
 function handleImageClick(cardData) {
   openPopup(previewImageModal);
-  previewImageTitle.textContent = cardData._cardName;
-  previewImageCard.alt = cardData._cardName;
-  previewImageCard.src = cardData._link;
+  previewImageTitle.textContent = cardData.cardName;
+  previewImageCard.alt = cardData.cardName;
+  previewImageCard.src = cardData.link;
+}
+
+function createCard(item) {
+  const generateCard = createCard(cardData)
+  cardsWrap.prepend(generateCard);
+
+  return cardElement
 }
 
 function renderCard(cardData) {
   const cardElement = new Card(cardData, "#card-template", handleImageClick);
   const generateCard = cardElement.getView();
-  cardsWrap.prepend(generateCard);
+  cardsWrap.prepend(cardElement);
 }
 
 const profileFormValidator = new FormValidator(config, profileEditForm);
@@ -102,7 +109,6 @@ function handleAddCardFormSubmit(e) {
   renderCard({ name, link });
   closePopup(addCardModal);
   addCardForm.reset();
-  addCardFormValidator.resetValidation();  
   addCardFormValidator.disableSubmitButton();
 }
 
@@ -132,10 +138,8 @@ profileEditCloseButton.addEventListener("click", () => closePopup(profileEditMod
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 addNewCardButton.addEventListener("click", () => {
-  addCardForm.reset();
-  addCardFormValidator.resetValidation();
-  addCardFormValidator.disableSubmitButton();
   openPopup(addCardModal);
+  addCardForm.reset();
 });
 addCardModalCloseButton.addEventListener("click", () => closePopup(addCardModal));
 previewImageCloseButton.addEventListener("click", () => closePopup(previewImageModal));

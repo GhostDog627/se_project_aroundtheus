@@ -58,7 +58,7 @@ class FormValidator {
     event.preventDefault();
     if (this._hasInvalidInput()) {
       this._toggleButtonState();
-    } 
+    }
   }
 
   enableValidation() {
