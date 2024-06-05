@@ -76,16 +76,14 @@ function handleImageClick(cardData) {
   previewImageCard.src = cardData.link;
 }
 
-function createCard(item) {
-  const generateCard = createCard(cardData)
-  cardsWrap.prepend(generateCard);
-
-  return cardElement
+function createCard(cardData) {
+  const card = new Card(cardData, "#card-template", handleImageClick);
+  const cardElement = card.getView();
+  return cardElement;
 }
 
 function renderCard(cardData) {
-  const card = new Card(cardData, "#card-template", handleImageClick);
-  const cardElement = card.getView();
+  const cardElement = createCard(cardData);
   cardsWrap.prepend(cardElement);
 }
 
@@ -139,10 +137,11 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 addNewCardButton.addEventListener("click", () => {
   openPopup(addCardModal);
-  addCardForm.reset();
 });
 addCardModalCloseButton.addEventListener("click", () => closePopup(addCardModal));
 previewImageCloseButton.addEventListener("click", () => closePopup(previewImageModal));
 
 initialCards.forEach((cardData) => renderCard(cardData));
+
+
 

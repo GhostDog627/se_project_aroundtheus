@@ -1,11 +1,10 @@
- class Card {
-  constructor(cardData, cardSelector,handleImageClick ) {
+class Card {
+  constructor(cardData, cardSelector, handleImageClick) {
     this._cardName = cardData.name;
     this._link = cardData.link;
     this._cardSelector = cardSelector;
     this._handleImageClick = handleImageClick;
   }
-
 
   getView() {
     this._cardElement = document.querySelector(this._cardSelector).content.querySelector(".card").cloneNode(true);
@@ -22,7 +21,7 @@
 
   _setEventListeners() {
     this._cardImageEl.addEventListener("click", () => {
-      this._handleImageClick(this)
+      this._handleImageClick({ cardName: this._cardName, link: this._link });
     });
 
     this._deleteButton.addEventListener("click", this._handleDeleteCard);
@@ -40,4 +39,4 @@
   }
 }
 
-export default Card
+export default Card;
